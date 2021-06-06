@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+	
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
@@ -17,30 +18,38 @@
                         document.getElementById('total').innerHTML = deposit_volume + item.trade_price * coin_volume;
                         document.getElementById('coin').innerHTML = item.trade_price * coin_volume;
                         document.getElementById('deposit').innerHTML = deposit_volume;
-
                     })
                 }
             })
         })
     </script>
 	<meta name="viewport" content="width=device-width, initial-scale=1" />
+	<title>돈절래</title>
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
+	<style>
+		*{
+			font-family: 'Nanum Myeongjo', serif;
+		}
+	</style>
+	<link rel="shortcut icon" type="image⁄/png" href="/Website-final/rocket.png">
 </head>
 
 <body>
-    <title>영앤리치톨앤핸섬빅앤머슬</title>
-    <h1>GunWoo Kim</h1>
-    <h3>The rich king of Korea</h3>
+    
+    <h1>건우의 경제적 자립 척도</h1>
+    <h3>🔥work hard🚨🔥</h3>
 	<br>
-    <h3 id="demo">총 자산 : <span id="total"></span>원</h3>
+    <h3 id="demo">시가총액 : <span id="total"></span>원</h3>
     <span>
-        Coin :
+        코인 :
         <span id="coin">
         </span>
         원
     </span>
-    <br>
-    <span>
-        Deposit :
+	<br>
+	<span>
+        예금 :
         <span id="deposit">
         </span>
         원

@@ -1,0 +1,17 @@
+.center {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.content {
+  font-family: system-ui, serif;
+  font-size: 1rem;
+  padding: 1rem;
+  background: #ffffff;
+}

@@ -11,7 +11,7 @@
             str = String(str);
             return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
         }
-        var coin_volume = 62;
+        var coin_volume = 256;
         var deposit_volume = 2000000;
         $(function() {
             $.ajax({
@@ -53,10 +53,6 @@
                 <br>
                 <h3>시가총액 : <span id="total"></span>원</h3>
                 <br>
-
-                <div>
-
-                </div>
             </div>
             <br>
             <span>
@@ -84,9 +80,15 @@
             </details>
             <div class="center">
                 <img src="https://gunwoo.netlify.app/goldbar.jpg" width="320" height="320">
+
             </div>
         </div>
     </div>
 </body>
+<div class="footer">
+    <h3>
+        愚公移山
+    </h3>
+</div>
 
 </html>

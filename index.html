@@ -11,8 +11,8 @@
             str = String(str);
             return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
         }
-        var coin_volume = 256;
-        var deposit_volume = 2000000;
+        var coin_volume = 0;
+        var deposit_volume = 2700000;
         $(function() {
             $.ajax({
                 url: "https://api.upbit.com/v1/ticker?markets=KRW-TRX",
@@ -42,6 +42,7 @@
     </style>
     <link rel="alternate icon" class="js-site-favicon" type="image/png" href="https://gunwoo.netlify.app/favicon.png">
     <link rel="stylesheet" href="style.css">
+
 </head>
 
 <body>
@@ -49,7 +50,10 @@
         <div class="content">
             <div class="center">
                 <h1>건우의 경제적 자립 현황</h1>
-                <h3>🔥work hard🚨🔥</h3>
+                <a class="black-link post-link-layout" href="https://github.com/gonudayo">
+                    <h3>🔥work hard🚨🔥</h3>
+                </a>
+
                 <br>
                 <h3>시가총액 : <span id="total"></span>원</h3>
                 <br>

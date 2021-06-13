@@ -6,13 +6,14 @@
     <meta charset="utf-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+	
     <script>
         function comma(str) {
             str = String(str);
             return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
         }
-        var coin_volume = 0;
-        var deposit_volume = 2700000;
+        var coin_volume = 3500;
+        var deposit_volume = 6000000;
         $(function() {
             $.ajax({
                 url: "https://api.upbit.com/v1/ticker?markets=KRW-TRX",
@@ -31,8 +32,10 @@
             })
         })
     </script>
+
+	
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>김건우</title>
+    <title>건우의 경제적 자립 현황</title>
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Nanum+Myeongjo&display=swap" rel="stylesheet">
     <style>
@@ -50,14 +53,18 @@
         <div class="content">
             <div class="center">
                 <h1>건우의 경제적 자립 현황</h1>
-                <a class="black-link post-link-layout" href="https://github.com/gonudayo">
-                    <h3>🔥work hard🚨🔥</h3>
-                </a>
-
+				<h3>🔥work hard🚨🔥</h3>
                 <br>
                 <h3>시가총액 : <span id="total"></span>원</h3>
                 <br>
             </div>
+            <br>
+            <span>
+                주식 :
+                <span>
+                </span>
+                구현 실패
+            </span>
             <br>
             <span>
                 코인 :
@@ -70,7 +77,7 @@
                 예금 :
                 <span id="deposit">
                 </span>
-                원
+                원 (2022.03 기준)
             </span>
             <br>
             <br>
@@ -78,7 +85,7 @@
             <details>
                 <summary>현재 목표</summary>
                 <h4>
-                    전역 후 독립 자금 1000만원
+                    자취 생활 예산 1000만원
                 </h4>
                 <progress value="0" max="100"></progress><b></b>
             </details>
@@ -90,9 +97,12 @@
     </div>
 </body>
 <div class="footer">
-    <h3>
-        愚公移山
+	<a class="black-link post-link-layout" href="https://velog.io/@gonudayo/2.%EC%99%84%EC%84%B1" target='_blank'>
+		<h3>
+        velog
     </h3>
+	</a>
+    
 </div>
 
 </html>

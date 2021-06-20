@@ -1,0 +1,63 @@
+html {
+
+    position: relative;
+
+    min-height: 100%;
+
+    margin: 0;
+}
+
+body {
+
+    min-height: 100%;
+
+}
+
+.center {
+  text-align: center;
+}
+
+.wrapper {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: #ffffff;
+}
+
+.content {
+  font-family: system-ui, serif;
+  font-size: 1rem;
+  padding: 0rem;
+  background: #ffffff;
+}
+
+.footer {
+
+    position: absolute;
+
+    left: 0;
+
+    bottom: 0;
+
+    width: 100%;
+
+	text-align: center;
+}
+
+a {
+  text-decoration-line: none;
+}
+
+a:link {
+  color : black;
+}
+a:visited {
+  color : black;
+}
+a:hover {
+  color : black;
+}
+a:active {
+  color : black;
+}
+

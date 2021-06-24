@@ -9,13 +9,13 @@
         str = String(str);
         return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
     }
+	var deposit_volume = 2000000;
     var coin_volume = 3500;
 	var stock_volume = 8;
 	var exchange_rate;
 	var trx;
 	var goal;
 	var stock_price;
-    var deposit_volume = 2000000;
 	
     $(function () {
         $.ajax({
@@ -51,12 +51,10 @@
 				goal = (stock_price+ trx + deposit_volume) / 100000;
 				document.getElementsByTagName('progress')[0].value = goal.toFixed(2);
    				document.getElementsByTagName('b')[0].innerText = ' ' + goal.toFixed(2) + '%';
-	
             }
         })
     })
 	
-    var now = new Date();
     function time() {
         var time = new Date();
         document.getElementById("now").innerHTML = time.getFullYear() + "/" + time.getMonth() + "/" + time.getDate() + "/" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
@@ -113,15 +111,17 @@
 		<progress value="0" max="100"></progress><b></b>
 		</details>
 		<div class="center">
-			<img src="images/goldbar.jpg" width="320" height="320">
+			<a href="http://youtube.com"><img src="images/youtube.png"></a>
+			<a href="https://ide.goorm.io/my/dashboard"><img src="images/goorm.png"></a>
+			<br>
+			<a href="https://ap-northeast-2.console.aws.amazon.com/console/home?region=ap-northeast-2#"><img src="images/aws.png"></a>
+			<a href="https://www.acmicpc.net/login
+"><img src="images/baekjoon.png"></a>
+			<br>
+			<a href="https://open.spotify.com"><img src="images/spotify.png"></a>
+			<a href="https://chrome.google.com/webstore/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg"><img src="images/adguard.png"></a>
 		</div>
 	</div>
 </div>
 </body>
-<div class="footer">
-	<a class="black-link post-link-layout" href="https://velog.io/@gonudayo/2.%EC%99%84%EC%84%B1" target='_blank'>
-	<h3>
-	velog </h3>
-	</a>
-</div>
 </html>

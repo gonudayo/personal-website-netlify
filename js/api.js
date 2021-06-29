@@ -28,15 +28,18 @@ $(function() {
 			var arr = createArray(data.Count, 2); 
 				for(var i=0; i<data.Count; i++){
 					if(item[i].value!=0){
-						arr[i][0] = item[i].timevalue
-						arr[i][1] = item[i].value
+						arr[i][0] = item[i].timevalue;
+						arr[i][1] = item[i].value;
 					}
 				}
 				arr.sort(function(a, b) { 
-  					return b[0] - a[0];  // 내림차순
-});
-				resultt = arr[0][1] - arr[1][1]
-				document.getElementsByTagName('zxc')[0].innerText = arr[0][1] +'(+'+ resultt + ')';
+  					return b[0] - a[0];
+				});
+				resultt = arr[0][1] - arr[1][1];
+				document.getElementById('baekjoon').innerHTML = arr[0][1] +'(+'+ resultt + ')';
+				if(resultt==0) document.getElementById('baekjoon').style.color = "#FF0000";
+				else document.getElementById('baekjoon').style.color = "#01DF01";
+				
             })
         }
     })

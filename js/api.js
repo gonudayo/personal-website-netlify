@@ -31,8 +31,6 @@ $(function() {
                     if (item[i].value != 0) {
                         arr[j][0] = item[i].timevalue;
                         arr[j][1] = item[i].value;
-                        console.log(arr[j][1]);
-                        console.log(j);
                         j++;
                     }
                 }

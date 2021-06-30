@@ -9,7 +9,7 @@ var exchange_rate;
 var trx;
 var goal;
 var stock_price;
-var resultt;
+var baekjoon_rate;
 
 
 $(function() {
@@ -18,28 +18,31 @@ $(function() {
         dataType: "json",
         success: function(data) {
             $.each(data, function(index, item) {
-			function createArray(rows, columns) {
-    		var arr = new Array(rows);
-    			for (var i = 0; i < rows; i++) {
-        			arr[i] = new Array(columns);
-   				 }		
-    			return arr;
-			}
-			var arr = createArray(data.Count, 2); 
-				for(var i=0; i<data.Count; i++){
-					if(item[i].value!=0){
-						arr[i][0] = item[i].timevalue;
-						arr[i][1] = item[i].value;
-					}
-				}
-				arr.sort(function(a, b) { 
-  					return b[0] - a[0];
-				});
-				resultt = arr[0][1] - arr[1][1];
-				document.getElementById('baekjoon').innerHTML = arr[0][1] +'(+'+ resultt + ')';
-				if(resultt==0) document.getElementById('baekjoon').style.color = "#FF0000";
-				else document.getElementById('baekjoon').style.color = "#01DF01";
-				
+                function createArray(rows, columns) {
+                    var arr = new Array(rows);
+                    for (var i = 0; i < rows; i++) {
+                        arr[i] = new Array(columns);
+                    }
+                    return arr;
+                }
+                var arr = createArray(data.Count, 2);
+                var j = 0;
+                for (var i = 0; i < data.Count; i++) {
+                    if (item[i].value != 0) {
+                        arr[j][0] = item[i].timevalue;
+                        arr[j][1] = item[i].value;
+                        console.log(arr[j][1]);
+                        console.log(j);
+                        j++;
+                    }
+                }
+                arr.sort(function(a, b) {
+                    return b[0] - a[0];
+                });
+                baekjoon_rate = arr[0][1] - arr[1][1];
+                document.getElementById('baekjoon').innerHTML = arr[0][1] + '(+' + baekjoon_rate + ')';
+                if (baekjoon_rate == 0) document.getElementById('baekjoon').style.color = "#FF0000";
+                else document.getElementById('baekjoon').style.color = "#01DF01";
             })
         }
     })
@@ -85,5 +88,5 @@ $(function() {
 
 function time() {
     var time = new Date();
-    document.getElementById("now").innerHTML = time.getFullYear() + "/" + (time.getMonth()+1) + "/" + time.getDate() + "/" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+    document.getElementById("now").innerHTML = time.getFullYear() + "/" + (time.getMonth() + 1) + "/" + time.getDate() + "/" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
 }

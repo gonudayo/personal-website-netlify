@@ -12,6 +12,8 @@ var stock_price;
 var baekjoon_rate;
 
 
+
+
 $(function() {
     $.ajax({
         url: "https://eqqsmag9z5.execute-api.ap-northeast-2.amazonaws.com/default/ReadMessage",
@@ -30,7 +32,7 @@ $(function() {
                 for (var i = 0; i < data.Count; i++) {
                     if (item[i].value != 0) {
                         arr[j][0] = item[i].timevalue;
-                        arr[j][1] = item[i].value;
+                        arr[j][1] = item[i].countvalue;
                         j++;
                     }
                 }
@@ -86,5 +88,5 @@ $(function() {
 
 function time() {
     var time = new Date();
-    document.getElementById("now").innerHTML = time.getFullYear() + "/" + (time.getMonth() + 1) + "/" + time.getDate() + "/" + time.getHours() + ":" + time.getMinutes() + ":" + time.getSeconds();
+    document.getElementById("now").innerHTML = time.getFullYear() + "/" + (time.getMonth() + 1) + "/" + time.getDate() + "/" + ("0" + time.getHours()).slice(-2) + ":" + ("0" + time.getMinutes()).slice(-2) + ":" + ("0" + time.getSeconds()).slice(-2);
 }

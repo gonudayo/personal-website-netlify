@@ -30,7 +30,7 @@ $(function() {
                 var arr = createArray(data.Count, 2);
                 var j = 0;
                 for (var i = 0; i < data.Count; i++) {
-                    if (item[i].value != 0) {
+                    if (item[i].countvalue != 0) {
                         arr[j][0] = item[i].timevalue;
                         arr[j][1] = item[i].countvalue;
                         j++;
@@ -53,11 +53,9 @@ $(function() {
         url: "https://api.upbit.com/v1/ticker?markets=KRW-TRX",
         dataType: "json",
         success: function(data) {
-            $.each(data, function(index, item) {
-                trx = Math.floor(item.trade_price * coin_volume);
+                trx = Math.floor(data[0].trade_price * coin_volume);
                 document.getElementById('coin').innerHTML = comma(trx);
                 document.getElementById('deposit').innerHTML = comma(deposit_volume);
-            })
         }
     })
 })

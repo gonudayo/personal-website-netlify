@@ -11,9 +11,6 @@ var goal;
 var stock_price;
 var baekjoon_rate;
 
-
-
-
 $(function() {
     $.ajax({
         url: "https://eqqsmag9z5.execute-api.ap-northeast-2.amazonaws.com/default/ReadMessage",

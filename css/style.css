@@ -3,20 +3,11 @@ html {
     min-height: 100%;
     margin: 0;
 }
-footer {
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    color: white;
-    background-color: white;
-}
-div {
-    margin: 0;
-}
 body {
     margin: 0;
     height: 100%;
+	background: black;
+	color: white;
 }
 .center {
     text-align: center;
@@ -25,20 +16,21 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    background: #ffffff;
+    background: black;
+	color: white;
 }
 .content {
-    font-family: system-ui, serif;
-    font-size: 1rem;
     padding: 0;
-    background: #ffffff;
+    background: black;
+	color: white;
 }
 .footer {
-    position: absolute;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
+	background: black;
+	color: white;
 }
 a {
     text-decoration-line: none;
@@ -54,4 +46,23 @@ a:hover {
 }
 a:active {
     color: black;
+}
+
+@media (prefers-color-scheme: light) {
+  .content {
+    background: white;
+    color: black;
+  }
+  .footer {
+    background: white;
+    color: black;
+  }
+   .wrapper {
+    background: white;
+    color: black;
+  }
+	body {
+    background: white;
+    color: black;
+  }
 }

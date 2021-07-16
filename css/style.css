@@ -27,21 +27,6 @@ footer {
     background: black;
 	color: white;
 }
-a {
-    text-decoration-line: none;
-}
-a:link {
-    color: black;
-}
-a:visited {
-    color: black;
-}
-a:hover {
-    color: black;
-}
-a:active {
-    color: black;
-}
 
 @media (prefers-color-scheme: light) {
   .content {

@@ -24,12 +24,13 @@ $(function() {
                     }
                     return arr;
                 }
-                var arr = createArray(data.Count, 2);
+                var arr = createArray(data.Count, 3);
                 var j = 0;
                 for (var i = 0; i < data.Count; i++) {
-                    if (item[i].countvalue != 0) {
+                    if (item[i].countvalue != 0&&item[i].commitvalue != 0) {
                         arr[j][0] = item[i].timevalue;
                         arr[j][1] = item[i].countvalue;
+						arr[j][2] = item[i].commitvalue;
                         j++;
                     }
                 }
@@ -37,9 +38,14 @@ $(function() {
                     return b[0] - a[0];
                 });
                 baekjoon_rate = arr[0][1] - arr[1][1];
+				github_commit = arr[0][2] - arr[1][2];
                 document.getElementById('baekjoon').innerHTML = arr[0][1] + '(+' + baekjoon_rate + ')';
                 if (baekjoon_rate == 0) document.getElementById('baekjoon').style.color = "#FF0000";
                 else document.getElementById('baekjoon').style.color = "#01DF01";
+				
+				document.getElementById('github').innerHTML = arr[0][2] + '(+' + github_commit + ')';
+				if (github_commit == 0) document.getElementById('github').style.color = "#FF0000";
+                else document.getElementById('github').style.color = "#01DF01";
             })
         }
     })

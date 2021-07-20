@@ -1,19 +1,20 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap');
+
 body {
+	font-family: 'Noto Sans KR', sans-serif;
     margin: 0;
     height: 100%;
 	background: black;
 	color: white;
 }
 footer {
+	font-family: 'Noto Sans KR', sans-serif;
     left: 0;
     bottom: 0;
     width: 100%;
     text-align: center;
 	background: black;
 	color: white;
-}
-.center {
-    text-align: center;
 }
 .wrapper {
     display: flex;
@@ -26,6 +27,23 @@ footer {
     padding: 0;
     background: black;
 	color: white;
+	text-align: center;
+}
+
+a {
+    text-decoration-line: none;
+}
+a:link {
+    color: black;
+}
+a:visited {
+    color: black;
+}
+a:hover {
+    color: black;
+}
+a:active {
+    color: black;
 }
 
 @media (prefers-color-scheme: light) {

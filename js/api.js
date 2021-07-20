@@ -2,14 +2,10 @@ function comma(str) {
     str = String(str);
     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
 }
-var deposit_volume = 2000000;
 var coin_volume = 3500;
 var stock_volume = 8;
 var exchange_rate;
 var trx;
-var goal;
-var stock_price;
-var baekjoon_rate;
 
 $(function() {
     $.ajax({
@@ -37,13 +33,12 @@ $(function() {
                 arr.sort(function(a, b) {
                     return b[0] - a[0];
                 });
-                baekjoon_rate = arr[0][1] - arr[1][1];
-				github_commit = arr[0][2] - arr[1][2];
+                var baekjoon_rate = arr[0][1] - arr[1][1];
+				var github_commit = arr[0][2] - arr[1][2];
                 document.getElementById('baekjoon').innerHTML = arr[0][1] + '(+' + baekjoon_rate + ')';
+				document.getElementById('github').innerHTML = arr[0][2] + '(+' + github_commit + ')';
                 if (baekjoon_rate == 0) document.getElementById('baekjoon').style.color = "#FF0000";
                 else document.getElementById('baekjoon').style.color = "#01DF01";
-				
-				document.getElementById('github').innerHTML = arr[0][2] + '(+' + github_commit + ')';
 				if (github_commit == 0) document.getElementById('github').style.color = "#FF0000";
                 else document.getElementById('github').style.color = "#01DF01";
             })
@@ -58,7 +53,6 @@ $(function() {
         success: function(data) {
                 trx = Math.floor(data[0].trade_price * coin_volume);
                 document.getElementById('coin').innerHTML = comma(trx);
-                document.getElementById('deposit').innerHTML = comma(deposit_volume);
         }
     })
 })
@@ -77,10 +71,10 @@ $(function() {
         url: "https://9wl9vr5c1l.execute-api.ap-northeast-2.amazonaws.com/default/Crawling-Example",
         dataType: "json",
         success: function(data) {
-            stock_price = Math.floor(data[0] * stock_volume * exchange_rate);
+            var stock_price = Math.floor(data[0] * stock_volume * exchange_rate);
             document.getElementById('stock').innerHTML = comma(stock_price);
-            document.getElementById('total').innerHTML = comma(stock_price + trx + deposit_volume);
-            goal = (stock_price + trx + deposit_volume) / 100000;
+            document.getElementById('total').innerHTML = comma(stock_price + trx);
+            var goal = (stock_price + trx) / 100000;
             document.getElementsByTagName('progress')[0].value = goal.toFixed(2);
             document.getElementsByTagName('b')[0].innerText = ' ' + goal.toFixed(2) + '%';
         }

@@ -34,33 +34,45 @@ a {
     text-decoration-line: none;
 }
 a:link {
-    color: black;
+    color: white;
 }
 a:visited {
-    color: black;
+    color: white;
 }
 a:hover {
-    color: black;
+    color: white;
 }
 a:active {
-    color: black;
+    color: white;
 }
 
 @media (prefers-color-scheme: light) {
-  .content {
-    background: white;
-    color: black;
-  }
+	.content {
+	  background: white;
+	  color: black;
+	}
    .wrapper {
-    background: white;
-    color: black;
-  }
+	   background: white;
+	   color: black;
+	}
+	a:link {
+   		color: black;
+	}
+	a:visited {
+    	color: black;
+	}
+	a:hover {
+		color: black;
+	}
+	a:active {
+   		color: black;
+	}
 	footer {
-    background: white;
-    color: black;
-  }
+		background: white;
+		color: black;
+	}
 	body {
-    background: white;
-    color: black;
-  }
+		background: white;
+		color: black;
+	}
 }

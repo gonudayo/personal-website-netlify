@@ -2,10 +2,13 @@ function comma(str) {
     str = String(str);
     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
 }
-const coin_volume = 3500;
-const stock_volume = 8;
+const TRX_volume = 1500;
+const SUN_volume = 4500;
+const stock_volume = 13;
 let exchange_rate;
 let trx;
+let sun;
+let btc;
 
 $(function() {
     $.ajax({
@@ -50,40 +53,64 @@ $(function() {
     })
 })
 
-$(function() {
+$(function TRX() {
     $.ajax({
         url: "https://api.upbit.com/v1/ticker?markets=KRW-TRX",
         dataType: "json",
         success: function(data) {
-                trx = Math.floor(data[0].trade_price * coin_volume);
-                document.getElementById('coin').innerHTML = comma(trx);
-        }
-    })
-})
-$(function() {
-    $.ajax({
-        url: "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD",
-        dataType: "json",
-        success: function(data) {
-            exchange_rate = data[0].cashSellingPrice;
+			trx = Math.floor(data[0].trade_price * TRX_volume);
+			SUN();
         }
     })
 })
 
-$(function() {
+function SUN() {
+    $.ajax({
+        url: "https://api.upbit.com/v1/ticker?markets=BTC-SUN",
+        dataType: "json",
+        success: function(data) {
+			sun = data[0].trade_price * SUN_volume;
+			BTC();
+        }
+    })
+}
+
+function BTC() {
+    $.ajax({
+        url: "https://api.upbit.com/v1/ticker?markets=KRW-BTC",
+        dataType: "json",
+        success: function(data) {
+			btc = Math.floor(data[0].trade_price * sun) + trx;
+			document.getElementById('coin').innerHTML = comma(btc);
+        }
+    })
+}
+
+$(function KRW() {
+    $.ajax({
+        url: "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD",
+        dataType: "json",
+        success: function(data) {
+			exchange_rate = data[0].cashSellingPrice;
+			STOCK();
+        }
+    })
+})
+
+function STOCK() {
     $.ajax({
         url: "https://9wl9vr5c1l.execute-api.ap-northeast-2.amazonaws.com/default/Crawling-Example",
         dataType: "json",
         success: function(data) {
             let stock_price = Math.floor(data[0] * stock_volume * exchange_rate);
             document.getElementById('stock').innerHTML = comma(stock_price);
-            document.getElementById('total').innerHTML = comma(stock_price + trx);
-            let goal = (stock_price + trx) / 100000;
+            document.getElementById('total').innerHTML = comma(stock_price + btc);
+            let goal = (stock_price + btc) / 100000;
             document.getElementsByTagName('progress')[0].value = goal.toFixed(2);
             document.getElementsByTagName('b')[0].innerText = ' ' + goal.toFixed(2) + '%';
         }
     })
-})
+}
 
 function time() {
     let time = new Date();

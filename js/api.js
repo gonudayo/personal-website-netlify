@@ -26,7 +26,7 @@ $(function() {
                 var arr = createArray(data.Count, 3);
                 var j = 0;
                 for (var i = 0; i < data.Count; i++) {
-                    if (item[i].countvalue != 0&&item[i].commitvalue != 0) {
+                    if (item[i].countvalue != 0 && item[i].commitvalue != 0) {
 						arr[j][0] = item[i].timevalue;
 						arr[j][1] = item[i].countvalue;
 						arr[j][2] = item[i].commitvalue;

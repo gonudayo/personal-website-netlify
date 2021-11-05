@@ -2,13 +2,30 @@ function comma(str) {
     str = String(str);
     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
 }
-const TRX_volume = 1500;
-const SUN_volume = 4500;
+const TRX_volume = 1500 * 0;
+const SUN_volume = 4500 * 0;
 const stock_volume = 13;
 let exchange_rate;
 let trx;
 let sun;
 let btc;
+
+function seoul(x) {
+  if(x) {
+    const temp = new Date(x);
+      temp.setHours(temp.getHours() + 9);
+  return temp;
+  }
+  else {
+    const temp = new Date();
+  temp.setHours(temp.getHours() + 9);
+  return temp;
+  }
+}
+
+document.getElementsByTagName('progress')[0].value = (new seoul() - new seoul("2020-09-14"))  / (1000 *60*60*24)  / 545 *100;
+document.getElementById('left').innerHTML = "휴가 제외 " + ((new seoul("2022-03-13") - new seoul()) / (1000 *60*60*24)).toFixed(0) + "일 남았다.";
+document.getElementsByTagName('b')[0].innerText = ((new seoul() - new seoul("2020-09-14"))  / (1000 *60*60*24)  / 545 *100) + '%';
 
 $(function() {
     $.ajax({
@@ -106,8 +123,6 @@ function STOCK() {
             document.getElementById('stock').innerHTML = comma(stock_price);
             document.getElementById('total').innerHTML = comma(stock_price + btc);
             let goal = (stock_price + btc) / 100000;
-            document.getElementsByTagName('progress')[0].value = goal.toFixed(2);
-            document.getElementsByTagName('b')[0].innerText = ' ' + goal.toFixed(2) + '%';
         }
     })
 }

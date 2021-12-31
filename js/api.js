@@ -2,13 +2,8 @@ function comma(str) {
     str = String(str);
     return str.replace(/(\d)(?=(?:\d{3})+(?!\d))/g, '$1,');
 }
-const TRX_volume = 1500 * 0;
-const SUN_volume = 4500 * 0;
-const stock_volume = 13;
+const stock_volume = 20;
 let exchange_rate;
-let trx;
-let sun;
-let btc;
 
 function seoul(x) {
   if(x) {
@@ -70,39 +65,6 @@ $(function() {
     })
 })
 
-$(function TRX() {
-    $.ajax({
-        url: "https://api.upbit.com/v1/ticker?markets=KRW-TRX",
-        dataType: "json",
-        success: function(data) {
-			trx = Math.floor(data[0].trade_price * TRX_volume);
-			SUN();
-        }
-    })
-})
-
-function SUN() {
-    $.ajax({
-        url: "https://api.upbit.com/v1/ticker?markets=BTC-SUN",
-        dataType: "json",
-        success: function(data) {
-			sun = data[0].trade_price * SUN_volume;
-			BTC();
-        }
-    })
-}
-
-function BTC() {
-    $.ajax({
-        url: "https://api.upbit.com/v1/ticker?markets=KRW-BTC",
-        dataType: "json",
-        success: function(data) {
-			btc = Math.floor(data[0].trade_price * sun) + trx;
-			document.getElementById('coin').innerHTML = comma(btc);
-        }
-    })
-}
-
 $(function KRW() {
     $.ajax({
         url: "https://quotation-api-cdn.dunamu.com/v1/forex/recent?codes=FRX.KRWUSD",
@@ -121,8 +83,7 @@ function STOCK() {
         success: function(data) {
             let stock_price = Math.floor(data[0] * stock_volume * exchange_rate);
             document.getElementById('stock').innerHTML = comma(stock_price);
-            document.getElementById('total').innerHTML = comma(stock_price + btc);
-            let goal = (stock_price + btc) / 100000;
+            document.getElementById('total').innerHTML = comma(stock_price);
         }
     })
 }

@@ -81,7 +81,7 @@ function STOCK() {
         url: "https://9wl9vr5c1l.execute-api.ap-northeast-2.amazonaws.com/default/Crawling-Example",
         dataType: "json",
         success: function(data) {
-            let stock_price = Math.floor(data[0] * stock_volume * exchange_rate);
+            let stock_price = Math.floor(data * stock_volume * exchange_rate);
             document.getElementById('stock').innerHTML = comma(stock_price);
             document.getElementById('total').innerHTML = comma(stock_price);
         }

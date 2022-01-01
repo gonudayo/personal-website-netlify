@@ -1,76 +1,76 @@
 body {
-	font-family: 'Noto Sans KR', sans-serif;
-    margin: 0;
-    height: 100%;
-	background: black;
-	color: white;
+  font-family: "Noto Sans KR", sans-serif;
+  margin: 0;
+  height: 100%;
+  background: black;
+  color: white;
 }
 footer {
-	font-family: 'Noto Sans KR', sans-serif;
-    left: 0;
-    bottom: 0;
-    width: 100%;
-    text-align: center;
-	background: black;
-	color: white;
+  font-family: "Noto Sans KR", sans-serif;
+  left: 0;
+  bottom: 0;
+  width: 100%;
+  text-align: center;
+  background: black;
+  color: white;
 }
 .wrapper {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background: black;
-	color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: black;
+  color: white;
 }
 .content {
-    padding: 0;
-    background: black;
-	color: white;
-	text-align: center;
+  padding: 0;
+  background: black;
+  color: white;
+  text-align: center;
 }
 
 a {
-    text-decoration-line: none;
+  text-decoration-line: none;
 }
 a:link {
-    color: white;
+  color: white;
 }
 a:visited {
-    color: white;
+  color: white;
 }
 a:hover {
-    color: white;
+  color: white;
 }
 a:active {
-    color: white;
+  color: white;
 }
 
 @media (prefers-color-scheme: light) {
-	.content {
-	  background: white;
-	  color: black;
-	}
-   .wrapper {
-	   background: white;
-	   color: black;
-	}
-	a:link {
-   		color: black;
-	}
-	a:visited {
-    	color: black;
-	}
-	a:hover {
-		color: black;
-	}
-	a:active {
-   		color: black;
-	}
-	footer {
-		background: white;
-		color: black;
-	}
-	body {
-		background: white;
-		color: black;
-	}
+  .content {
+    background: white;
+    color: black;
+  }
+  .wrapper {
+    background: white;
+    color: black;
+  }
+  a:link {
+    color: black;
+  }
+  a:visited {
+    color: black;
+  }
+  a:hover {
+    color: black;
+  }
+  a:active {
+    color: black;
+  }
+  footer {
+    background: white;
+    color: black;
+  }
+  body {
+    background: white;
+    color: black;
+  }
 }

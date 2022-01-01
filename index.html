@@ -1,71 +1,99 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap">
-<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap" rel="stylesheet"/>
-<link rel="preload" href="css/style.css" as="style"/>
-<link rel="stylesheet" href="css/style.css"/>
-<meta charset="utf-8"/>
-<meta http-equiv="X-UA-Compatible" content="IE=edge"/>
-<meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>🔥work hard🚨🔥</title>
-<script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
-<script src="./js/api.js" defer="defer"></script>
-<link rel="alternate icon" class="js-site-favicon" type="image/png" href="images/favicon.png">
-</head>
-<body onload="time()">
-<div class="wrapper">
-	<div class="content">
-		<h1>🔥work hard🚨🔥</h1>
-    <strong><span id="left"></span></strong>
-    <br>
-		<progress value="0" max="100"></progress><br><b></b>
-    <br>
-		<br>
-		<h2>시가총액 : <span id="total">loading... </span>원</h2>
-		<span id="now">
-		</span>
-		<br>
-		<h3>
-		금융투자
-		</h3>
-		<span>
-		주식 : <span id="stock">loading...
-		</span>
-		원 </span>
-		<br>
-		<h3>
-		실물투자
-		</h3>		
-		백준 전체 : 
-		<span id="baekjoon"></span><br>
-		깃허브(<span id="year"></span>) : 
-		<span id="github"></span>
-	</div>
-</div>
-<br>
-<br>
-</body>
-<footer class="footer">
-루틴<br>
-<a href="https://accounts.spotify.com/ko/login?continue=https:%2F%2Fopen.spotify.com%2F" target='_blank'><img src="images/spotify.png" height="75" width="75"></a>
-<a href="https://ide.goorm.io/my/dashboard" target='_blank'><img src="images/goorm.png" height="75" width="75"></a>
-<a href="https://github.com/login" target='_blank'><img src="images/github.png" height="75" width="75"></a>
-<a href="https://www.acmicpc.net/login" target='_blank'><img src="images/baekjoon.png" height="75" width="75"></a>
-<a href="https://programmers.co.kr/users/login" target='_blank'><img src="images/programmers.png" height="75" width="75"></a>
-<br>자주 이용하는 사이트 바로가기<br>
-&nbsp;&nbsp;
-<a href="https://ideal-sukiyaki.slack.com/" target='_blank'>Slack</a>
-&nbsp;&nbsp;
-<a href="https://account.mongodb.com/account/login" target='_blank'>mongoDB</a>
-&nbsp;&nbsp;
-<a href="https://code.visualstudio.com/" target='_blank'>VS CODE</a>
-&nbsp;&nbsp;
-<a href="https://dl.pstmn.io/download/latest/win64" target='_blank'>Postman</a>
-&nbsp;&nbsp;
-<a href="https://chrome.google.com/webstore/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg" target='_blank'>Adguard</a>
-&nbsp;&nbsp;
-<a href="https://ap-northeast-2.console.aws.amazon.com/console/home?region=ap-northeast-2#" target='_blank'>AWS</a>
-&nbsp;&nbsp;
-</footer>
+  <head>
+    <link
+      rel="preload"
+      as="style"
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Noto+Sans+KR&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="preload" href="css/style.css" as="style" />
+    <link rel="stylesheet" href="css/style.css" />
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🔥work hard🚨🔥</title>
+    <script src="//code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="./js/api.js" defer="defer"></script>
+    <link
+      rel="alternate icon"
+      class="js-site-favicon"
+      type="image/png"
+      href="images/favicon.png"
+    />
+  </head>
+  <body onload="time()">
+    <div class="wrapper">
+      <div class="content">
+        <h1>🔥work hard🚨🔥</h1>
+        <strong><span id="left"></span></strong>
+        <br />
+        <progress value="0" max="100"></progress><br /><b></b>
+        <br />
+        <br />
+        <h2>시가총액 : <span id="total">loading... </span>원</h2>
+        <span id="now"> </span>
+        <br />
+        <h3>금융투자</h3>
+        <span> 주식 : <span id="stock">loading... </span> 원 </span>
+        <br />
+        <h3>실물투자</h3>
+        백준 전체 :
+        <span id="baekjoon"></span><br />
+        깃허브(<span id="year"></span>) :
+        <span id="github"></span>
+      </div>
+    </div>
+    <br />
+    <br />
+  </body>
+  <footer class="footer">
+    루틴<br />
+    <a
+      href="https://accounts.spotify.com/ko/login?continue=https:%2F%2Fopen.spotify.com%2F"
+      target="_blank"
+      ><img src="images/spotify.png" height="75" width="75"
+    /></a>
+    <a href="https://ide.goorm.io/my/dashboard" target="_blank"
+      ><img src="images/goorm.png" height="75" width="75"
+    /></a>
+    <a href="https://github.com/login" target="_blank"
+      ><img src="images/github.png" height="75" width="75"
+    /></a>
+    <a href="https://www.acmicpc.net/login" target="_blank"
+      ><img src="images/baekjoon.png" height="75" width="75"
+    /></a>
+    <a href="https://programmers.co.kr/users/login" target="_blank"
+      ><img src="images/programmers.png" height="75" width="75"
+    /></a>
+    <br />자주 이용하는 사이트 바로가기<br />
+    &nbsp;&nbsp;
+    <a href="https://ideal-sukiyaki.slack.com/" target="_blank">Slack</a>
+    &nbsp;&nbsp;
+    <a href="https://account.mongodb.com/account/login" target="_blank"
+      >mongoDB</a
+    >
+    &nbsp;&nbsp;
+    <a href="https://code.visualstudio.com/" target="_blank">VS CODE</a>
+    &nbsp;&nbsp;
+    <a href="https://dl.pstmn.io/download/latest/win64" target="_blank"
+      >Postman</a
+    >
+    &nbsp;&nbsp;
+    <a
+      href="https://chrome.google.com/webstore/detail/adguard-adblocker/bgnkhhnnamicmpeenaelnjfhikgbkllg"
+      target="_blank"
+      >Adguard</a
+    >
+    &nbsp;&nbsp;
+    <a
+      href="https://ap-northeast-2.console.aws.amazon.com/console/home?region=ap-northeast-2#"
+      target="_blank"
+      >AWS</a
+    >
+    &nbsp;&nbsp;
+  </footer>
 </html>

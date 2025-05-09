@@ -27,5 +27,4 @@
 
 ## 3. 저장소
 
-* **프론트엔드 (Netlify):** [gonudayo/personal-website-netlify](https://github.com/gonudayo/personal-website-netlify)
-* **백엔드 (AWS Lambda):** [gonudayo/personal-website-aws](https://github.com/gonudayo/personal-website-aws)
+* **AWS Lambda:** [gonudayo/personal-website-aws](https://github.com/gonudayo/personal-website-aws)

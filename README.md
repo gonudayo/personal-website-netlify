@@ -25,6 +25,6 @@
 * **스케줄링**
     * Amazon EventBridge (일일 데이터 수집 스케줄링용)
 
-## 3. 저장소
+## 3. 관련 저장소
 
 * **AWS Lambda:** [gonudayo/personal-website-aws](https://github.com/gonudayo/personal-website-aws)
